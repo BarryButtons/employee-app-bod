@@ -86,9 +86,6 @@ fun add(){
     print("Enter gross salary: ")
     val grossSalary = readLine()!!.toDouble()
 
-    print("Enter PAYE %: ")
-    val payePercentage = readLine()!!.toDouble()
-
     print("Enter PRSI %: ")
     val prsiPercentage = readLine()!!.toDouble()
 
@@ -98,6 +95,6 @@ fun add(){
     print("Enter Cycle to Work Deduction: ")
     val cycleToWorkMonthlyDeduction= readLine()!!.toDouble()
 
-    employees.create(Employee(firstName, surname, gender, 0, grossSalary, payePercentage, prsiPercentage, annualBonus, cycleToWorkMonthlyDeduction))
+    employees.create(Employee(firstName, surname, gender, 0, grossSalary, 38.2, prsiPercentage, annualBonus, cycleToWorkMonthlyDeduction))
 }
 
