@@ -1,5 +1,7 @@
 package ie.setu
 
+import ie.setu.controllers.EmployeeAPI
+import ie.setu.models.Employee
 import mu.KotlinLogging
 
 var employees = EmployeeAPI()
@@ -18,7 +20,7 @@ fun menu() : Int {
     |   2.List All Employee
     |   3.Search Employee
     |   4.Print Payslip for Employee
-    |   -1. Exit
+    |   0.Exit
     |   
     |Enter Option:
     """.trimMargin()
@@ -37,12 +39,12 @@ fun start(){
             2 -> list()
             3 -> search()
             4 -> paySlip()
-            -99 -> dummyData()
-            -1 -> println("Exiting App")
+
+            0 -> println("Exiting App")
             else-> println("Invalid Option")
         }
         println()
-    }while (input != -1)
+    }while (input != 0)
 }
 
     fun list(){
@@ -99,8 +101,3 @@ fun add(){
     employees.create(Employee(firstName, surname, gender, 0, grossSalary, payePercentage, prsiPercentage, annualBonus, cycleToWorkMonthlyDeduction))
 }
 
-fun dummyData() {
-    employees.create(Employee("Joe", "Soap", 'm', 0, 35655.43, 31.0, 7.5, 2000.0, 25.6))
-    employees.create(Employee("Joan", "Murphy", 'f', 0, 54255.13, 32.5, 7.0, 1500.0, 55.3))
-    employees.create(Employee("Mary", "Quinn", 'f', 0, 75685.41, 40.0, 8.5, 4500.0, 0.0))
-}

@@ -1,4 +1,4 @@
-package ie.setu
+package ie.setu.models
 
 import kotlin.math.round
 
@@ -41,14 +41,18 @@ class Employee (var firstName: String,
   PAYMENT DETAILS
  Salary: ${getMonthlySalary()} 
  Bonus:  ${getMonthlyBonus()}
+ 
+ Gross: ${getGrossPay()}
 ----------------------------------------------------    
   DEDUCTION DETAILS
  PAYE: ${getMonthlyPaye()} 
  PRSI: ${getMonthlyPrsi()} 
- Cycle To Work:  ${cycleToWorkMonthlyDeduction} 
+ Cycle To Work:  ${cycleToWorkMonthlyDeduction}
+  
+ Total Deductions: ${getTotalDeductions()}
 ----------------------------------------------------   
  Gross:  ${getGrossPay()}  
- Total Deductions: ${getTotalDeductions()} 
+ - Total Deductions: ${getTotalDeductions()} 
 ----------------------------------------------------   
  NET PAY:${getNetPay()} 
    

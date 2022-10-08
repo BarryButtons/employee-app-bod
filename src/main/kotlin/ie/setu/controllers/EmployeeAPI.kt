@@ -1,10 +1,17 @@
-package ie.setu
+package ie.setu.controllers
 
-var lastId= 0
+import ie.setu.models.Employee
+
+var lastId= 1001
+//var paye = 38.2
 
 internal fun getId(): Int {
     return lastId++
 }
+
+/*internal fun getpaye(): Double {
+    return paye
+}*/
 
 class EmployeeAPI{
 
@@ -20,6 +27,7 @@ class EmployeeAPI{
 
     fun create(employee: Employee){
         employee.employeeID = getId()
+        //employee.payePercentage= getpaye()
         employees.add(employee)
     }
 }
